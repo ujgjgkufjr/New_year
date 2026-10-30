@@ -444,7 +444,7 @@ header nav ul li.btn a:hover {
     }
     .hero-image img { max-width: 500px; }
     .hero--info h1 { font-size: 32px; }
-    
+
     .dialog-scene { flex-direction: column; text-align: center; }
     .girl-image { flex: 1; max-width: 350px; }
     .dialogue-zone { flex: 1; width: 100%; }
