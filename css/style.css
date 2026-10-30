@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    color: rgb(234, 238, 255);
+    font-size: 16px;
+    background: rgb(68, 34, 87);
+}
+
+a { text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.wrapper {
+    background: linear-gradient(135deg, rgb(68, 34, 87) 0%, rgb(53, 69, 128) 100%);
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container {
+    width: min(1400px, 95%);
+    margin-inline: auto;
+}
+
+/*ШАПКА*/
+header {
+    padding: 45px 0 20px;
+    position: relative;
+    z-index: 100;
+}
+
+header .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+    position: relative;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul li a {
+    color: rgb(194, 205, 255);
+    transition: color 0.3s;
+    font-weight: 600;
+}
+
+header nav ul li a:hover { color: #fff; }
+
+header nav ul li.btn a {
+    background: rgb(189, 92, 238);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 400ms ease;
+    box-shadow: 0 4px 15px rgba(189, 92, 238, 0.4);
+}
+
+header nav ul li.btn a:hover {
+    background: rgb(189, 79, 245);
+}
+
+/*HERO*/
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    padding: 0 0 50px;
+    gap: 20px;
+}
+
+.hero--info {
+    width: 45%;
+    position: relative;
+    z-index: 10;
+    padding-top: 80px; 
+}
+
+.hero--info h2 {
+    color: #c3d0ff;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.hero--info h1 {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 30px;
+}
+
+.hero--info .btn {
+    background: rgb(189, 79, 245);
+    color: #fff;
+    border-radius: 60px;
+    padding: 14px 40px;
+    transition: all 300ms ease;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(189, 92, 238, 0.4);
+}
+
+.hero--info .btn:hover {
+    transform: translateY(-3px);
+    background: rgb(189, 92, 238);
+}
+
+/* Картинка справа*/
+.hero-image {
+    width: 55%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start; /*Прижимаем саму картинку к самому верху*/
+}
+
+.hero-image img {
+    max-width: 730px; /* Оптимальный размер */
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.5));
+    animation: floatHero 8s ease-in-out infinite;
+    will-change: transform;
+    margin-top: -110px;
+    pointer-events: none; /*Не тапайся, женщина*/
+}
+
+@keyframes floatHero {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/*ДИАЛОГ*/
+.dialog-section {
+    padding: 50px 0 80px;
+    position: relative;
+    z-index: 10;
+}
+
+.dialog-scene {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.girl-image {
+    flex: 0 0 49%;
+    animation: floatGirl 6s ease-in-out infinite;
+}
+
+.girl-image img {
+    width: 100%;
+    max-width: 777px;
+    filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes floatGirl {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+.dialogue-zone {
+    flex: 0 0 48%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+/*Секундомер*/
+#timer {
+    scroll-margin-top: 100px; 
+}
+.sec {
+    margin-top: 20px;
+    align-self: flex-start;
+    border: 1px solid rgba(56, 124, 201, 0.171);
+    border-radius: 15px;
+    padding: 15px 25px;
+    display: inline-block; 
+    width: fit-content;
+    box-shadow: 0 8px 20px rgba(194, 205, 255, 0.3);
+    cursor: pointer; 
+    transition: box-shadow 0.3s ease;
+}
+.sec:hover {
+    box-shadow: 0 8px 25px rgba(189, 92, 238, 0.6); /* Подсветится при наведении */
+}
+.speech-bubble {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.speech-bubble {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.speech-bubble p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+}
+
+.input-area {
+    display: flex;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+#userInput {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 60px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+}
+#userInput:focus-visible {
+    outline: 2px solid rgb(189, 92, 238);
+}
+#userInput::placeholder { color: rgba(194, 205, 255, 0.5); }
+
+.send-btn {
+    background: rgb(189, 79, 245);
+    color: #fff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.send-btn:hover {
+    background: rgb(189, 92, 238);
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.result-box h3 {
+    font-size: 19px;
+    color: rgb(189, 92, 238);
+    margin-bottom: 10px;
+}
+
+.again-btn {
+    background: rgb(189, 79, 245);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.again-btn:hover { background: rgb(189, 92, 238); }
+
+.restart-area {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.restart-btn {
+    background: transparent;
+    color: rgb(194, 205, 255);
+    border: 1px solid rgba(194, 205, 255, 0.3);
+    border-radius: 60px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.restart-btn:hover {
+    background: rgba(189, 92, 238, 0.2);
+    border-color: rgb(189, 92, 238);
+}
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 220px;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(15px);
+    color: #fff;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    z-index: 1000;
+    top: 150%; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Анимация плавного появления */
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Маленькая стрелочка вверх */
+.tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 255, 255, 0.2) transparent;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(-50%) translateY(5px); /* Чуть-чуть съезжает вниз*/
+}
+/*БЛОК С ПОЧТОЙ*/
+.contact-section {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    position: relative;
+    z-index: 10;
+}
+.contact-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 40px 50px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(189, 92, 238, 0.3); /* Фиолетовое свечение */
+}
+.contact-box h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.contact-box p {
+    font-size: 16px;
+    color: #c3d0ff;
+    margin-bottom: 25px;
+}
+.contact-btn {
+    display: inline-block;
+    background: rgb(189, 79, 245);
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 60px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 300ms ease;
+    box-shadow: 0 8px 25px rgba(189, 92, 238, 0.4);
+}
+.contact-btn:hover {
+    background: rgb(189, 92, 238);
+    transform: scale(1.05) translateY(-2px);
+    box-shadow: 0 12px 30px rgba(189, 92, 238, 0.6);
+}
+/*МОБИЛЬНАЯ ВЕРСИЯ*/
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0 40px;
+    }
+    .hero--info {
+        width: 100%;
+        padding-top: 20px;
+    }
+    .hero-image { 
+        width: 100%;
+        justify-content: center; 
+        margin-top: 30px; 
+    }
+    .hero-image img { max-width: 500px; }
+    .hero--info h1 { font-size: 32px; }
+    
+    .dialog-scene { flex-direction: column; text-align: center; }
+    .girl-image { flex: 1; max-width: 350px; }
+    .dialogue-zone { flex: 1; width: 100%; }
+    .speech-bubble::before {
+        left: 50%; top: -14px; transform: translateX(-50%);
+        border-width: 0 14px 14px 14px;
+        border-color: transparent transparent rgba(255, 255, 255, 0.15) transparent;
+    }
+}
+.snowflakes { /*контейнер снежинок*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+.snowflake { /*Сами мнежинки*/
+    position: absolute;
+    top: -50px;
+    text-shadow: 0 0 5px rgba(255, 255, 0.8);
+    animation: fall linear infinite;
+    opacity: 0.8;
+}
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(105vh) rotate(360deg); }
+}
+.snowflake:nth-child(1) { left: 10%; font-size: 20px; animation-duration: 8s; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 25%; font-size: 12px; animation-duration: 13s; animation-delay: 2s; }
+.snowflake:nth-child(3) { left: 50%; font-size: 25px; animation-duration: 10s; animation-delay: 4s; }
+.snowflake:nth-child(4) { left: 55%; font-size: 15px; animation-duration: 15s; animation-delay: 1s; }
+.snowflake:nth-child(5) { left: 75%; font-size: 18px; animation-duration: 9s; animation-delay: 5s; }
+.snowflake:nth-child(6) { left: 85%; font-size: 23px; animation-duration: 11s; animation-delay: 3s; }
+.snowflake:nth-child(7) { left: 95%; font-size: 14px; animation-duration: 14s; animation-delay: 0s; }
+.snowflake:nth-child(8) { left: 5%; font-size: 16px; animation-duration: 13s; animation-delay: 6s; }
+.snowflake:nth-child(9) { left: 30%; font-size: 27px; animation-duration: 7s; animation-delay: 2s; }
+.snowflake:nth-child(10) { left: 60%; font-size: 10px; animation-duration: 16s; animation-delay: 3s; }
+.snowflake:nth-child(11) { left: 35%; font-size: 21px; animation-duration: 14s; animation-delay: 4s; }
+.snowflake:nth-child(12) { left: 40%; font-size: 17px; animation-duration: 4s; animation-delay: 2s; }
+.snowflake:nth-child(13) { left: 80%; font-size: 23px; animation-duration: 10s; animation-delay: 2s; }
+.snowflake:nth-child(14) { left: 55%; font-size: 15px; animation-duration: 12s; animation-delay: 1s; }
+.snowflake:nth-child(15) { left: 70%; font-size: 18px; animation-duration: 9s; animation-delay: 5s; }
+.snowflake:nth-child(16) { left: 85%; font-size: 22px; animation-duration: 11s; animation-delay: 3s; }
+.snowflake:nth-child(17) { left: 95%; font-size: 14px; animation-duration: 15s; animation-delay: 0s; }
+.snowflake:nth-child(18) { left: 15%; font-size: 16px; animation-duration: 13s; animation-delay: 6s; }
+.snowflake:nth-child(19) { left: 30%; font-size: 26px; animation-duration: 7s; animation-delay: 2s; }
+.snowflake:nth-child(20) { left: 60%; font-size: 11px; animation-duration: 16s; animation-delay: 3s; }
+.snowflake:nth-child(21) { left: 20%; font-size: 17px; animation-duration: 8s; animation-delay: 0s; }
+.snowflake:nth-child(22) { left: 25%; font-size: 12px; animation-duration: 12s; animation-delay: 2s; }
+.snowflake:nth-child(23) { left: 45%; font-size: 24px; animation-duration: 10s; animation-delay: 4s; }
+.snowflake:nth-child(24) { left: 65%; font-size: 13px; animation-duration: 15s; animation-delay: 1s; }
+.snowflake:nth-child(25) { left: 70%; font-size: 19px; animation-duration: 9s; animation-delay: 5s; }
+.snowflake:nth-child(26) { left: 360%; font-size: 18px; animation-duration: 17s; animation-delay: 5s; }
+.snowflake:nth-child(27) { left: 65%; font-size: 22px; animation-duration: 12s; animation-delay: 3s; }
+.snowflake:nth-child(28) { left: 15%; font-size: 14px; animation-duration: 15s; animation-delay: 1s; }
+.snowflake:nth-child(29) { left: 25%; font-size: 21px; animation-duration: 13s; animation-delay: 6s; }
+.snowflake:nth-child(30) { left: 35%; font-size: 23px; animation-duration: 16s; animation-delay: 2s; }
+.snowflake:nth-child(31) { left: 40%; font-size: 18px; animation-duration: 16s; animation-delay: 3s; }
+.snowflake:nth-child(32) { left: 50%; font-size: 20px; animation-duration: 18s; animation-delay: 3s; }
+.snowflake:nth-child(33) { left: 65%; font-size: 19px; animation-duration: 17s; animation-delay: 4s; }
+.snowflake:nth-child(34) { left: 75%; font-size: 26px; animation-duration: 19s; animation-delay: 6s; }
+.snowflake:nth-child(35) { left: 85%; font-size: 23px; animation-duration: 14s; animation-delay: 5s; }
+.snowflake:nth-child(36) { left: 90%; font-size: 27px; animation-duration: 13s; animation-delay: 7s; }
