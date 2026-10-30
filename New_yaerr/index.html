@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be Happyyy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- ШАПКА -->
+        <header class="container">
+            <span class="logo">Make a wish</span>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li class="active"><a href="#dialog">Speakers</a></li>
+
+                    <li class="active" id="startTimerBtn">
+                        <a href="#newyear">Second</a>
+                    </li>
+
+                    <li class="btn">
+                        <a href="#" class="tooltip">
+                            Thanks
+                            <span class="tooltip-text">Для вас старалась Вероника! Желаю волшебного Нового года!
+                                ✨</span>
+                        </a>
+                    </li>
+                </ul>
+                <span class="underline"></span>
+            </nav>
+        </header>
+
+        <!-- HERO (ВЕРХНИЙ БЛОК) -->
+        <div class="hero container">
+            <div class="hero--info">
+                <h2>A happy moment!</h2>
+                <h1>Новый год - замечательный праздник для всех. Это теплое чувство пробуждается в сердце каждого
+                </h1>
+                <a href="#dialog" class="btn" style="display: inline-block;">Создайте что-нибудь для чудес..</a>
+            </div>
+            <div class="hero-image">
+                <img src="img/left.png" alt="Angel">
+            </div>
+        </div>
+                         <!-- БЛОК С ПОЧТОЙ -->
+                         <div class="contact-section container">
+                             <div class="contact-box">
+                                 <h3>Хотите связаться со мной?</h3>
+                                 <p>Буду рада вашим вопросам, идеям или просто теплым словам! ✨</p>
+                                 <a href="mailto:mfeechkova@gmail.com" class="contact-btn">Написать на почту</a>
+                            </div>
+                        </div>
+        <!-- ДИАЛОГ (НИЖНИЙ БЛОК) -->
+        <section class="container dialog-section" id="dialog">
+            <div class="dialog-scene">
+                <div class="girl-image">
+                    <img src="img/orig.png" alt="Девушка">
+                </div>
+
+                <!-- Диалог справа -->
+                <div class="dialogue-zone">
+                    <!-- Облачко с текстом -->
+                    <div class="speech-bubble" id="speechBubble">
+                        <p id="botText">Добро пожаловать! ✨ Как ваше настроение в преддверии Нового года?</p>
+                    </div>
+
+                    <!-- Поле ввода -->
+                    <div class="input-area" id="inputArea">
+                        <input type="text" id="userInput" placeholder="Например: отличное, немного устал..."
+                            autocomplete="off">
+                        <button class="btn send-btn" id="sendBtn">→</button>
+                    </div>
+                    <div class="sec" id="newyear">
+                        <span id="days">00</span> д
+                        <span id="hours">00</span> ч
+                        <span id="minutes">00</span> м
+                        <span id="seconds">00</span> с
+                    </div>
+                    <!-- Сброс -->
+                    <div class="restart-area" id="restartArea" style="display:none;">
+                        <button class="btn restart-btn" id="restartBtn">Пройти заново</button>
+                    </div>
+                    <!--Снег-->
+                    <div class="snowflakes" aria-hidden="true">
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❅</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                        <div class="snowflake">❆</div>
+                        <div class="snowflake">❄</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
